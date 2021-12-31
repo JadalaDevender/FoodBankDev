@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.49.0'
+project:
+    name: FoodBankDev
+    package:
+        name: FoodBankDev
+        api_version: '52.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/FoodBankDev/tests
+            options:
+                outputdir: robot/FoodBankDev/results
+
+    robot_testdoc:
+        options:
+            path: robot/FoodBankDev/tests
+            output: robot/FoodBankDev/doc/FoodBankDev_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
